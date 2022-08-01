@@ -55,7 +55,30 @@ struct IconImageModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
             .scaledToFit()
-            .frame(minWidth: 60, idealWidth: 70, maxWidth: 80, alignment: .center)
+            .frame(minWidth: 40, idealWidth: 60, maxWidth: 80, alignment: .center)
+            .modifier(ShadowModifier())
+    }
+}
+
+
+struct BetCapsuleModifier: ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.white)
+            .font(.system(size: 25, weight: .heavy, design: .rounded))
+            .modifier(ShadowModifier())
+            .background(
+                Capsule().fill(LinearGradient(gradient: Gradient(colors: [Color("ColorYellowRMIT"), Color("ColorRedRMIT")]), startPoint: .bottom, endPoint: .top))
+                    .frame(width: 80, height: 50, alignment: .center)
+            )
+    }
+}
+
+struct CasinoChipModifier: ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .scaledToFit()
+            .frame(height: 70)
             .modifier(ShadowModifier())
     }
 }

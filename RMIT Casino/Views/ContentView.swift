@@ -83,9 +83,9 @@ struct ContentView: View {
                     }
                     
                     // MARK: - SPIN BUTTON
-                    Button(action: {
+                    Button {
                         print("Press The Spin button")
-                    }) {
+                    } label: {
                         Image("spin")
                             .resizable()
                             .modifier(ReelImageModifier())
@@ -97,6 +97,43 @@ struct ContentView: View {
                 // MARK: - FOOTER
                 
                 Spacer()
+                
+                HStack{
+                    
+                    HStack{
+                        Button {
+                            print("Bet 20 coins")
+                        } label: {
+                            HStack(spacing: 30){
+                                Text("20")
+                                    .modifier(BetCapsuleModifier())
+                               Image("casino-chips")
+                                    .resizable()
+                                    .opacity(0)
+                                    .modifier(CasinoChipModifier())
+                            }
+                            .padding(.horizontal, 20)
+                        }
+                        
+                        Spacer()
+                        
+                        Button {
+                            print("Bet 20 coins")
+                        } label: {
+                            HStack(spacing: 30){
+                                Image("casino-chips")
+                                     .resizable()
+                                     .opacity(1)
+                                     .modifier(CasinoChipModifier())
+                                Text("20")
+                                    .modifier(BetCapsuleModifier())
+                               
+                            }
+                            .padding(.horizontal, 20)
+                        }
+                    }
+                    
+                }
 
                 
             }
