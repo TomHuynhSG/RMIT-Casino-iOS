@@ -12,7 +12,7 @@ struct LogoView: View {
         Image("rmit-casino-logo")
             .resizable()
             .scaledToFit()
-            .frame(minHeight: 200, idealHeight: 230, maxHeight: 250, alignment: .center)
+            .frame(minHeight: 130, idealHeight: 170, maxHeight: 200, alignment: .center)
             .modifier(ShadowModifier())
     }
 }

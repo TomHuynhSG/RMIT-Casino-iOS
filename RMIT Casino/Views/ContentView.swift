@@ -125,7 +125,7 @@ struct ContentView: View {
                                      .resizable()
                                      .opacity(1)
                                      .modifier(CasinoChipModifier())
-                                Text("20")
+                                Text("10")
                                     .modifier(BetCapsuleModifier())
                                
                             }
@@ -137,6 +137,28 @@ struct ContentView: View {
 
                 
             }
+            .overlay(
+                // RESET
+                Button(action: {
+                  print("Reset")
+                }) {
+                  Image(systemName: "arrow.2.circlepath.circle")
+                    .foregroundColor(.white)
+                }
+                .modifier(ButtonModifier()),
+                alignment: .topLeading
+              )
+              .overlay(
+                // INFO
+                Button(action: {
+                    print("How to play")
+                }) {
+                  Image(systemName: "info.circle")
+                    .foregroundColor(.white)
+                }
+                .modifier(ButtonModifier()),
+                alignment: .topTrailing
+              )
             .padding()
             .frame(maxWidth: 720)
         }

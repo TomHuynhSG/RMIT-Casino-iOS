@@ -7,12 +7,22 @@
 
 import SwiftUI
 
+struct ButtonModifier: ViewModifier {
+  func body(content: Content) -> some View {
+    content
+      .font(.title)
+      .accentColor(Color.white)
+      .padding()
+  }
+}
+
 struct ShadowModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
             .shadow(color:Color("ColorBlackTransparent"), radius: 7)
     }
 }
+
 
 
 struct scoreNumberStyle: ViewModifier{
