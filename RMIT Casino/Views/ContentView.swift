@@ -51,9 +51,51 @@ struct ContentView: View {
                 }
                 
                 // MARK: - SLOT MACHINE
+                VStack{
+                    // MARK: - FIRST REEL
+                    ZStack{
+                        ReelView()
+                        Image("bell")
+                            .resizable()
+                            .modifier(IconImageModifier())
+                
+                    }
+                    HStack{
+                        // MARK: - SECOND REEL
+                        ZStack{
+                            ReelView()
+                            Image("cherry")
+                                .resizable()
+                                .modifier(IconImageModifier())
+                    
+                        }
+                        
+                        Spacer()
+                        
+                        // MARK: - THIRD REEL
+                        ZStack{
+                            ReelView()
+                            Image("melon")
+                                .resizable()
+                                .modifier(IconImageModifier())
+                    
+                        }
+                    }
+                    
+                    // MARK: - SPIN BUTTON
+                    Button(action: {
+                        print("Press The Spin button")
+                    }) {
+                        Image("spin")
+                            .resizable()
+                            .modifier(ReelImageModifier())
+                    }
+                    
+                }
                 
                 
                 // MARK: - FOOTER
+                
                 Spacer()
 
                 

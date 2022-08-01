@@ -13,7 +13,6 @@ struct LogoView: View {
             .resizable()
             .scaledToFit()
             .frame(minHeight: 200, idealHeight: 230, maxHeight: 250, alignment: .center)
-            .padding()
             .modifier(ShadowModifier())
     }
 }

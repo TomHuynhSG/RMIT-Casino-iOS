@@ -10,7 +10,7 @@ import SwiftUI
 struct ShadowModifier: ViewModifier{
     func body(content: Content) -> some View {
         content
-            .shadow(color:Color("ColorBlackTransparent"), radius: 5)
+            .shadow(color:Color("ColorBlackTransparent"), radius: 7)
     }
 }
 
@@ -39,5 +39,23 @@ struct scoreCapsuleStyle: ViewModifier{
             .background(
                 Capsule()
                     .foregroundColor(Color("ColorBlackTransparent")))
+    }
+}
+
+struct ReelImageModifier: ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .scaledToFit()
+            .frame(minWidth: 140, idealWidth: 200, maxWidth: 220, alignment: .center)
+            .modifier(ShadowModifier())
+    }
+}
+
+struct IconImageModifier: ViewModifier{
+    func body(content: Content) -> some View {
+        content
+            .scaledToFit()
+            .frame(minWidth: 60, idealWidth: 70, maxWidth: 80, alignment: .center)
+            .modifier(ShadowModifier())
     }
 }
