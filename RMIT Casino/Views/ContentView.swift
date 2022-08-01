@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-// MARK: - PROPERTIES
-
 struct ContentView: View {
+    // MARK: - PROPERTIES
+    let icons = ["apple","bar","bell","cherry","clover","diamond", "grape", "heart", "horseshoe","lemon","melon","money","orange"]
     
     // MARK: - BODY
     var body: some View {
@@ -55,7 +55,7 @@ struct ContentView: View {
                     // MARK: - FIRST REEL
                     ZStack{
                         ReelView()
-                        Image("bell")
+                        Image(icons[0])
                             .resizable()
                             .modifier(IconImageModifier())
                 
@@ -64,7 +64,7 @@ struct ContentView: View {
                         // MARK: - SECOND REEL
                         ZStack{
                             ReelView()
-                            Image("cherry")
+                            Image(icons[1])
                                 .resizable()
                                 .modifier(IconImageModifier())
                     
@@ -75,7 +75,7 @@ struct ContentView: View {
                         // MARK: - THIRD REEL
                         ZStack{
                             ReelView()
-                            Image("melon")
+                            Image(icons[2])
                                 .resizable()
                                 .modifier(IconImageModifier())
                     
