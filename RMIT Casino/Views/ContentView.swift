@@ -279,11 +279,10 @@ struct ContentView: View {
                             .padding(.vertical,10)
                             .padding(.horizontal, 20)
                             .background(
-                                Capsule().fill(Color("ColorRedRMIT"))
-                                    
+                                Capsule()
+                                    .strokeBorder(lineWidth: 2)
+                                    .foregroundColor(Color("ColorRedRMIT"))
                             )
-                            
-                            
 
                         }
                         Spacer()
