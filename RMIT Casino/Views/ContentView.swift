@@ -11,11 +11,15 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     let icons = ["apple","bar","bell","cherry","clover","diamond", "grape", "heart", "horseshoe","lemon","melon","money","orange"]
     
+    @State private var highscore = 0
+    @State private var coins = 100
+    @State private var betAmount = 10
     @State private var reels = [0, 1, 2]
     @State private var showingInfoView = false
     
     // MARK: - FUNCTIONS
     
+    // SPIN LOGIC
     func spinReels(){
         // reels[0] = Int.random(in: 0...symbols.count - 1)
         reels = reels.map({ _ in
@@ -23,19 +27,34 @@ struct ContentView: View {
         })
     }
     
-    // SPIN LOGIC
-    
-    
     // CHECK WINNING LOGIC
+    func checkWinning(){
+        if reels[0]==reels[1] && reels[1]==reels[2] && reels[2]==reels[0]{
+            // PLAYER WINS LOGIC
+            playerWins()
+            
+            // NEW HIGHSCORE LOGIC
+            if coins > highscore{
+                newHighScore()
+            }
+            
+        } else {
+            // PLAYER LOSES
+            playLoses()
+        }
+    }
     
+    func playerWins() {
+        coins += betAmount * 10
+    }
     
-    // PLAYER WINS LOGIC
+    func newHighScore(){
+        highscore = coins
+    }
     
-    
-    // NEW HIGHSCORE LOGIC
-    
-    
-    // PLAYER LOSES
+    func playLoses() {
+        coins -= betAmount
+    }
     
     
     // GAME IS OVER
@@ -61,7 +80,7 @@ struct ContentView: View {
                         Text("Your\nMoney".uppercased())
                             .modifier(scoreLabelStyle())
                             .multilineTextAlignment(.trailing)
-                        Text("100")
+                        Text("\(coins)")
                             .modifier(scoreNumberStyle())
                     }
                     .modifier(scoreCapsuleStyle()
@@ -69,7 +88,7 @@ struct ContentView: View {
                     )
                     Spacer()
                     HStack{
-                        Text("200")
+                        Text("\(highscore)")
                             .modifier(scoreNumberStyle())
                             .multilineTextAlignment(.leading)
                         Text("High\nScore".uppercased())
@@ -114,8 +133,11 @@ struct ContentView: View {
                     
                     // MARK: - SPIN BUTTON
                     Button {
+                        // SPIN THE REELS
                         self.spinReels()
-                        var _ = print(reels)
+                        
+                        // CHECK WINNING
+                        self.checkWinning()
                     } label: {
                         Image("spin")
                             .resizable()
