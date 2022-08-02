@@ -298,7 +298,7 @@ struct ContentView: View {
                 // MARK: - INFO GAME BUTTON
                 
                 Button(action: {
-                    print("How to play")
+                    self.showingInfoView = true
                 }) {
                   Image(systemName: "info.circle")
                     .foregroundColor(.white)
@@ -360,8 +360,10 @@ struct ContentView: View {
                 }.onAppear(perform: {
                     playSound(sound: "drum-music", type: "mp3")
                   })
-            }
-        }
+            }//ZStack
+        }.sheet(isPresented: $showingInfoView) {
+            InfoView()
+          }
     }
 }
 

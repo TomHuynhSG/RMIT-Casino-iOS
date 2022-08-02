@@ -20,6 +20,7 @@
 		6B67FE1228982EB200C39526 /* ring-up.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B67FE0A28982EB100C39526 /* ring-up.mp3 */; };
 		6B67FE1328982EB200C39526 /* spin.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B67FE0B28982EB100C39526 /* spin.mp3 */; };
 		6B724CFC2898D88500C12E46 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B724CFB2898D88500C12E46 /* PlaySound.swift */; };
+		6B724CFE2898DFDF00C12E46 /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B724CFD2898DFDF00C12E46 /* InfoView.swift */; };
 		6B8A74EC28983A55009E1A17 /* Modifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A74EB28983A55009E1A17 /* Modifiers.swift */; };
 		6B8A74EE28983AEF009E1A17 /* LogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A74ED28983AEF009E1A17 /* LogoView.swift */; };
 		6B8A74F02898418E009E1A17 /* ReelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B8A74EF2898418E009E1A17 /* ReelView.swift */; };
@@ -40,6 +41,7 @@
 		6B67FE0A28982EB100C39526 /* ring-up.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "ring-up.mp3"; sourceTree = "<group>"; };
 		6B67FE0B28982EB100C39526 /* spin.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = spin.mp3; sourceTree = "<group>"; };
 		6B724CFB2898D88500C12E46 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		6B724CFD2898DFDF00C12E46 /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
 		6B8A74EB28983A55009E1A17 /* Modifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Modifiers.swift; sourceTree = "<group>"; };
 		6B8A74ED28983AEF009E1A17 /* LogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoView.swift; sourceTree = "<group>"; };
 		6B8A74EF2898418E009E1A17 /* ReelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelView.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				6B67FDF82898191500C39526 /* ContentView.swift */,
+				6B724CFD2898DFDF00C12E46 /* InfoView.swift */,
 				6B8A74EF2898418E009E1A17 /* ReelView.swift */,
 				6B8A74ED28983AEF009E1A17 /* LogoView.swift */,
 			);
@@ -211,6 +214,7 @@
 				6B8A74F02898418E009E1A17 /* ReelView.swift in Sources */,
 				6B8A74EC28983A55009E1A17 /* Modifiers.swift in Sources */,
 				6B67FDF72898191500C39526 /* RMIT_CasinoApp.swift in Sources */,
+				6B724CFE2898DFDF00C12E46 /* InfoView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
