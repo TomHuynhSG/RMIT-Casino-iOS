@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var betAmount = 10
     @State private var reels = [0, 1, 2]
     @State private var showingInfoView = false
+    @State private var isChooseBet10 = true
+    @State private var isChooseBet20 = false
     
     // MARK: - FUNCTIONS
     
@@ -54,6 +56,18 @@ struct ContentView: View {
     
     func playLoses() {
         coins -= betAmount
+    }
+    
+    func chooseBet20() {
+        betAmount = 20
+        isChooseBet20 = true
+        isChooseBet10 = false
+    }
+    
+    func chooseBet10() {
+        betAmount = 10
+        isChooseBet10 = true
+        isChooseBet20 = false
     }
     
     
@@ -155,14 +169,15 @@ struct ContentView: View {
                     
                     HStack{
                         Button {
-                            print("Bet 20 coins")
+                            self.chooseBet20()
                         } label: {
                             HStack(spacing: 30){
                                 Text("20")
+                                    .foregroundColor(isChooseBet20 ? Color("ColorBlueRMIT") : Color.white)
                                     .modifier(BetCapsuleModifier())
                                Image("casino-chips")
                                     .resizable()
-                                    .opacity(0)
+                                    .opacity(isChooseBet20 ? 1 : 0 )
                                     .modifier(CasinoChipModifier())
                             }
                             .padding(.horizontal, 20)
@@ -171,14 +186,15 @@ struct ContentView: View {
                         Spacer()
                         
                         Button {
-                            print("Bet 20 coins")
+                            self.chooseBet10()
                         } label: {
                             HStack(spacing: 30){
                                 Image("casino-chips")
                                      .resizable()
-                                     .opacity(1)
+                                     .opacity(isChooseBet10 ? 1 : 0 )
                                      .modifier(CasinoChipModifier())
                                 Text("10")
+                                    .foregroundColor(isChooseBet10 ? Color("ColorBlueRMIT") : Color.white)
                                     .modifier(BetCapsuleModifier())
                                
                             }
