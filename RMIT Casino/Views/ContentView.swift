@@ -11,6 +11,8 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     let icons = ["apple","bar","bell","cherry","clover","diamond", "grape", "heart", "horseshoe","lemon","melon","money","orange"]
     
+    let haptics = UINotificationFeedbackGenerator()
+    
     @State private var highscore = UserDefaults.standard.integer(forKey: "highscore")
     @State private var coins = 100
     @State private var betAmount = 10
@@ -33,6 +35,8 @@ struct ContentView: View {
         reels = reels.map({ _ in
             Int.random(in: 0...icons.count - 1)
         })
+        playSound(sound: "spin", type: "mp3")
+        haptics.notificationOccurred(.success)
     }
     
     // MARK: - CHECK WINNING LOGIC
@@ -44,6 +48,8 @@ struct ContentView: View {
             // NEW HIGHSCORE LOGIC
             if coins > highscore{
                 newHighScore()
+            } else {
+                playSound(sound: "winning", type: "mp3")
             }
             
         } else {
@@ -61,6 +67,7 @@ struct ContentView: View {
     func newHighScore(){
         highscore = coins
         UserDefaults.standard.set(highscore, forKey: "highscore")
+        playSound(sound: "highscore", type: "mp3")
     }
     
     // MARK: - PLAYER LOSE LOGIC
@@ -73,6 +80,7 @@ struct ContentView: View {
         betAmount = 20
         isChooseBet20 = true
         isChooseBet10 = false
+        playSound(sound: "bet-chip", type: "mp3")
     }
     
     // MARK: - BET 10 LOGIC
@@ -80,6 +88,7 @@ struct ContentView: View {
         betAmount = 10
         isChooseBet10 = true
         isChooseBet20 = false
+        playSound(sound: "bet-chip", type: "mp3")
     }
     
     // MARK: - GAME OVER LOGIC
@@ -87,6 +96,7 @@ struct ContentView: View {
         if coins <= 0 {
             // SHOW MODAL MESSAGE OF GAME OVER
             showGameOverModal = true
+            playSound(sound: "gameover", type: "mp3")
         }
     }
     
@@ -96,6 +106,7 @@ struct ContentView: View {
         highscore = 0
         coins = 100
         chooseBet10()
+        playSound(sound: "ring-up", type: "mp3")
     }
     
     
@@ -152,6 +163,7 @@ struct ContentView: View {
                             .animation(.easeOut(duration: Double.random(in: 0.5...0.7)))
                             .onAppear(perform: {
                                 self.animatingIcon.toggle()
+                                playSound(sound: "blink", type: "mp3")
                             })
                 
                     }
@@ -168,6 +180,7 @@ struct ContentView: View {
                                 .animation(.easeOut(duration: Double.random(in: 0.7...0.9)))
                                 .onAppear(perform: {
                                     self.animatingIcon.toggle()
+                                    playSound(sound: "blink", type: "mp3")
                                 })
                         }
                         
@@ -184,6 +197,7 @@ struct ContentView: View {
                                 .animation(.easeOut(duration: Double.random(in: 0.9...1.1)))
                                 .onAppear(perform: {
                                     self.animatingIcon.toggle()
+                                    playSound(sound: "blink", type: "mp3")
                                 })
                         }
                     }
@@ -235,6 +249,7 @@ struct ContentView: View {
                                     .modifier(BetCapsuleModifier())
                                Image("casino-chips")
                                     .resizable()
+                                    .offset(x: isChooseBet20 ? 0 : 20)
                                     .opacity(isChooseBet20 ? 1 : 0 )
                                     .modifier(CasinoChipModifier())
                             }
@@ -250,6 +265,7 @@ struct ContentView: View {
                             HStack(spacing: 30){
                                 Image("casino-chips")
                                      .resizable()
+                                     .offset(x: isChooseBet10 ? 0 : -20)
                                      .opacity(isChooseBet10 ? 1 : 0 )
                                      .modifier(CasinoChipModifier())
                                 Text("10")
@@ -293,6 +309,7 @@ struct ContentView: View {
             .padding()
             .frame(maxWidth: 720)
             .blur(radius:  showGameOverModal ? 5 : 0 , opaque: false)
+            
             
             
             // MARK: - GAMEOVER MODAL
@@ -340,9 +357,10 @@ struct ContentView: View {
                     .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 280, idealHeight: 300, maxHeight: 350, alignment: .center)
                     .background(Color("ColorBlueRMIT"))
                     .cornerRadius(20)
-                }
+                }.onAppear(perform: {
+                    playSound(sound: "drum-music", type: "mp3")
+                  })
             }
-            
         }
     }
 }
