@@ -15,9 +15,12 @@ struct ContentView: View {
     @State private var coins = 100
     @State private var betAmount = 10
     @State private var reels = [0, 1, 2]
-    @State private var showingInfoView = false
+    
     @State private var isChooseBet10 = true
     @State private var isChooseBet20 = false
+    
+    @State private var showingInfoView = false
+    @State private var showGameOverModal = false
     
     // MARK: - FUNCTIONS
     
@@ -72,6 +75,12 @@ struct ContentView: View {
     
     
     // GAME IS OVER
+    func isGameOver() {
+        if coins <= 0 {
+            // SHOW MODAL MESSAGE OF GAME OVER
+            showGameOverModal = true
+        }
+    }
     
     
     // MARK: - BODY
@@ -152,6 +161,9 @@ struct ContentView: View {
                         
                         // CHECK WINNING
                         self.checkWinning()
+                        
+                        // GAME OVER
+                        self.isGameOver()
                     } label: {
                         Image("spin")
                             .resizable()
@@ -230,6 +242,58 @@ struct ContentView: View {
               )
             .padding()
             .frame(maxWidth: 720)
+            .blur(radius:  showGameOverModal ? 5 : 0 , opaque: false)
+            
+            
+            // MARK: - GAMEOVER MODAL
+            if showGameOverModal{
+                ZStack{
+                    Color("ColorBlackTransparent")
+                        .edgesIgnoringSafeArea(.all)
+                    VStack{
+                        Text("GAME OVER")
+                            .font(.system(.title, design: .rounded))
+                            .fontWeight(.heavy)
+                            .foregroundColor(Color.white)
+                            .padding()
+                            .frame(minWidth: 280, idealWidth: 280, maxWidth: 320)
+                            .background(Color("ColorRedRMIT"))
+                        
+                        Spacer()
+                        
+                        VStack {
+                            Image("rmit-casino-logo")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(maxHeight: 150)
+                            Text("You lost all money!\nYou are not the god of gambler!\n Good luck next time!")
+                                .font(.system(.body, design: .rounded))
+                                .foregroundColor(Color.white)
+                                .multilineTextAlignment(.center)
+                            Button {
+                                self.showGameOverModal = false
+                                self.coins = 100
+                            } label: {
+                                Text("New Game".uppercased())
+                            }
+                            .padding(.vertical,10)
+                            .padding(.horizontal, 20)
+                            .background(
+                                Capsule().fill(Color("ColorRedRMIT"))
+                                    
+                            )
+                            
+                            
+
+                        }
+                        Spacer()
+                    }
+                    .frame(minWidth: 280, idealWidth: 280, maxWidth: 320, minHeight: 280, idealHeight: 300, maxHeight: 350, alignment: .center)
+                    .background(Color("ColorBlueRMIT"))
+                    .cornerRadius(20)
+                }
+            }
+            
         }
     }
 }
