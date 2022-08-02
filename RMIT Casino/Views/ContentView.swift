@@ -22,9 +22,12 @@ struct ContentView: View {
     @State private var showingInfoView = false
     @State private var showGameOverModal = false
     
-    // MARK: - FUNCTIONS
+    @State private var animatingIcon = false
+
     
-    // SPIN LOGIC
+    // MARK: - FUNCTIONS (GAME LOGICS)
+    
+    // MARK: - SPIN LOGIC
     func spinReels(){
         // reels[0] = Int.random(in: 0...symbols.count - 1)
         reels = reels.map({ _ in
@@ -32,7 +35,7 @@ struct ContentView: View {
         })
     }
     
-    // CHECK WINNING LOGIC
+    // MARK: - CHECK WINNING LOGIC
     func checkWinning(){
         if reels[0]==reels[1] && reels[1]==reels[2] && reels[2]==reels[0]{
             // PLAYER WINS LOGIC
@@ -49,33 +52,37 @@ struct ContentView: View {
         }
     }
     
+    // MARK: - PLAYER WIN LOGIC
     func playerWins() {
         coins += betAmount * 10
     }
     
+    // MARK: - HIGHSCORE LOGIC
     func newHighScore(){
         highscore = coins
         UserDefaults.standard.set(highscore, forKey: "highscore")
     }
     
+    // MARK: - PLAYER LOSE LOGIC
     func playLoses() {
         coins -= betAmount
     }
     
+    // MARK: - BET 20 LOGIC
     func chooseBet20() {
         betAmount = 20
         isChooseBet20 = true
         isChooseBet10 = false
     }
     
+    // MARK: - BET 10 LOGIC
     func chooseBet10() {
         betAmount = 10
         isChooseBet10 = true
         isChooseBet20 = false
     }
     
-    
-    // GAME IS OVER
+    // MARK: - GAME OVER LOGIC
     func isGameOver() {
         if coins <= 0 {
             // SHOW MODAL MESSAGE OF GAME OVER
@@ -83,6 +90,7 @@ struct ContentView: View {
         }
     }
     
+    // MARK: - RESET GAME LOGIC
     func resetGame(){
         UserDefaults.standard.set(0, forKey: "highscore")
         highscore = 0
@@ -132,22 +140,35 @@ struct ContentView: View {
                 
                 // MARK: - SLOT MACHINE
                 VStack{
+                    
                     // MARK: - FIRST REEL
                     ZStack{
                         ReelView()
                         Image(icons[reels[0]])
                             .resizable()
                             .modifier(IconImageModifier())
+                            .opacity(animatingIcon ? 1 : 0)
+                            .offset(y: animatingIcon ? 0 : -50)
+                            .animation(.easeOut(duration: Double.random(in: 0.5...0.7)))
+                            .onAppear(perform: {
+                                self.animatingIcon.toggle()
+                            })
                 
                     }
                     HStack{
+                        
                         // MARK: - SECOND REEL
                         ZStack{
                             ReelView()
                             Image(icons[reels[1]])
                                 .resizable()
                                 .modifier(IconImageModifier())
-                    
+                                .opacity(animatingIcon ? 1 : 0)
+                                .offset(y: animatingIcon ? 0 : -50)
+                                .animation(.easeOut(duration: Double.random(in: 0.7...0.9)))
+                                .onAppear(perform: {
+                                    self.animatingIcon.toggle()
+                                })
                         }
                         
                         Spacer()
@@ -158,14 +179,29 @@ struct ContentView: View {
                             Image(icons[reels[2]])
                                 .resizable()
                                 .modifier(IconImageModifier())
-                    
+                                .opacity(animatingIcon ? 1 : 0)
+                                .offset(y: animatingIcon ? 0 : -50)
+                                .animation(.easeOut(duration: Double.random(in: 0.9...1.1)))
+                                .onAppear(perform: {
+                                    self.animatingIcon.toggle()
+                                })
                         }
                     }
                     
                     // MARK: - SPIN BUTTON
                     Button {
+                        // NO ANIMATION
+                        withAnimation{
+                            self.animatingIcon = false
+                        }
+                        
                         // SPIN THE REELS
                         self.spinReels()
+                        
+                        // TRIGGER ANIMATION
+                        withAnimation{
+                            self.animatingIcon = true
+                        }
                         
                         // CHECK WINNING
                         self.checkWinning()
@@ -188,6 +224,8 @@ struct ContentView: View {
                 HStack{
                     
                     HStack{
+                        
+                        // MARK: - BET 20 BUTTON
                         Button {
                             self.chooseBet20()
                         } label: {
@@ -205,6 +243,7 @@ struct ContentView: View {
                         
                         Spacer()
                         
+                        // MARK: - BET 10 BUTTON
                         Button {
                             self.chooseBet10()
                         } label: {
@@ -224,10 +263,11 @@ struct ContentView: View {
                     
                 }
 
-                
             }
             .overlay(
-                // RESET
+                
+                // MARK: - RESET GAME BUTTON
+                
                 Button(action: {
                     self.resetGame()
                 }) {
@@ -238,7 +278,9 @@ struct ContentView: View {
                 alignment: .topLeading
               )
               .overlay(
-                // INFO
+                
+                // MARK: - INFO GAME BUTTON
+                
                 Button(action: {
                     print("How to play")
                 }) {
