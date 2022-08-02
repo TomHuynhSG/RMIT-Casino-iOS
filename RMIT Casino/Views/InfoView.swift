@@ -19,13 +19,13 @@ struct InfoView: View {
             Spacer()
             
             Form {
-              Section(header: Text("How to play")) {
+              Section(header: Text("How To Play")) {
                   Text("Just spin the reels to play.")
                   Text("Matching all icons to win.")
                   Text("The winning amount will be 10x of your betting amount.")
                   Text("You can reset the money and highscore by clicking on the button Reset.")
               }
-                Section(header: Text("About the application")) {
+                Section(header: Text("Application Information")) {
                     HStack {
                       Text("App Name")
                       Spacer()
