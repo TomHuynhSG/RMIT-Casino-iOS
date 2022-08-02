@@ -41,7 +41,7 @@ struct ContentView: View {
     
     // MARK: - CHECK WINNING LOGIC
     func checkWinning(){
-        if reels[0]==reels[1] && reels[1]==reels[2] && reels[2]==reels[0]{
+        if reels[0]==reels[1] || reels[1]==reels[2] || reels[2]==reels[0]{
             // PLAYER WINS LOGIC
             playerWins()
             
