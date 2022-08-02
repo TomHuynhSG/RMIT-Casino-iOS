@@ -11,6 +11,36 @@ struct ContentView: View {
     // MARK: - PROPERTIES
     let icons = ["apple","bar","bell","cherry","clover","diamond", "grape", "heart", "horseshoe","lemon","melon","money","orange"]
     
+    @State private var reels = [0, 1, 2]
+    @State private var showingInfoView = false
+    
+    // MARK: - FUNCTIONS
+    
+    func spinReels(){
+        // reels[0] = Int.random(in: 0...symbols.count - 1)
+        reels = reels.map({ _ in
+            Int.random(in: 0...icons.count - 1)
+        })
+    }
+    
+    // SPIN LOGIC
+    
+    
+    // CHECK WINNING LOGIC
+    
+    
+    // PLAYER WINS LOGIC
+    
+    
+    // NEW HIGHSCORE LOGIC
+    
+    
+    // PLAYER LOSES
+    
+    
+    // GAME IS OVER
+    
+    
     // MARK: - BODY
     var body: some View {
         ZStack {
@@ -55,7 +85,7 @@ struct ContentView: View {
                     // MARK: - FIRST REEL
                     ZStack{
                         ReelView()
-                        Image(icons[0])
+                        Image(icons[reels[0]])
                             .resizable()
                             .modifier(IconImageModifier())
                 
@@ -64,7 +94,7 @@ struct ContentView: View {
                         // MARK: - SECOND REEL
                         ZStack{
                             ReelView()
-                            Image(icons[1])
+                            Image(icons[reels[1]])
                                 .resizable()
                                 .modifier(IconImageModifier())
                     
@@ -75,7 +105,7 @@ struct ContentView: View {
                         // MARK: - THIRD REEL
                         ZStack{
                             ReelView()
-                            Image(icons[2])
+                            Image(icons[reels[2]])
                                 .resizable()
                                 .modifier(IconImageModifier())
                     
@@ -84,7 +114,8 @@ struct ContentView: View {
                     
                     // MARK: - SPIN BUTTON
                     Button {
-                        print("Press The Spin button")
+                        self.spinReels()
+                        var _ = print(reels)
                     } label: {
                         Image("spin")
                             .resizable()
