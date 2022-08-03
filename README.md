@@ -32,7 +32,7 @@
    </tr>
  </table>
  
- Note: RMIT Casino got features like background music, sound effects and haptic feedback (vibration) so  the best experience, it is  to play on an actual physical iPhone!
+ Note: RMIT Casino got features like background music, sound effects and haptic feedback (vibration) so  the best experience, it is recommended to play on an actual physical iPhone!
  
 ## 🔧 Build Information
 - Xcode 13.4.1
