@@ -160,7 +160,7 @@ struct ContentView: View {
                             .modifier(IconImageModifier())
                             .opacity(animatingIcon ? 1 : 0)
                             .offset(y: animatingIcon ? 0 : -50)
-                            .animation(.easeOut(duration: Double.random(in: 0.5...0.7)))
+                            .animation(.easeOut(duration: Double.random(in: 0.5...0.7)), value: animatingIcon)
                             .onAppear(perform: {
                                 self.animatingIcon.toggle()
                                 playSound(sound: "blink", type: "mp3")
@@ -177,7 +177,7 @@ struct ContentView: View {
                                 .modifier(IconImageModifier())
                                 .opacity(animatingIcon ? 1 : 0)
                                 .offset(y: animatingIcon ? 0 : -50)
-                                .animation(.easeOut(duration: Double.random(in: 0.7...0.9)))
+                                .animation(.easeOut(duration: Double.random(in: 0.7...0.9)), value: animatingIcon)
                                 .onAppear(perform: {
                                     self.animatingIcon.toggle()
                                     playSound(sound: "blink", type: "mp3")
@@ -194,7 +194,7 @@ struct ContentView: View {
                                 .modifier(IconImageModifier())
                                 .opacity(animatingIcon ? 1 : 0)
                                 .offset(y: animatingIcon ? 0 : -50)
-                                .animation(.easeOut(duration: Double.random(in: 0.9...1.1)))
+                                .animation(.easeOut(duration: Double.random(in: 0.9...1.1)), value: animatingIcon)
                                 .onAppear(perform: {
                                     self.animatingIcon.toggle()
                                     playSound(sound: "blink", type: "mp3")
@@ -252,6 +252,7 @@ struct ContentView: View {
                                     .offset(x: isChooseBet20 ? 0 : 20)
                                     .opacity(isChooseBet20 ? 1 : 0 )
                                     .modifier(CasinoChipModifier())
+                                    .animation(.default, value: isChooseBet20)
                             }
                             .padding(.horizontal, 20)
                         }
@@ -268,6 +269,7 @@ struct ContentView: View {
                                      .offset(x: isChooseBet10 ? 0 : -20)
                                      .opacity(isChooseBet10 ? 1 : 0 )
                                      .modifier(CasinoChipModifier())
+                                     .animation(.default, value: isChooseBet20)
                                 Text("10")
                                     .foregroundColor(isChooseBet10 ? Color("ColorBlueRMIT") : Color.white)
                                     .modifier(BetCapsuleModifier())
