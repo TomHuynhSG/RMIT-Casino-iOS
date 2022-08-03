@@ -11,8 +11,11 @@
 
 - This is an iOS application, inspired from the Melbourne Crown Casino!
 - It is an easy to play iOS game version of Slot Machine 🎰!
-
-<img src="https://i.imgur.com/vaJypZ3.png" width="238" > <img src="https://i.imgur.com/gUmS8n5.png" width="238" > <img src="https://i.imgur.com/LpTyusp.png" width="239" >
+<p align="center">
+  <img src="https://i.imgur.com/vaJypZ3.png" width="238" >
+  <img src="https://i.imgur.com/gUmS8n5.png" width="238" >
+  <img src="https://i.imgur.com/LpTyusp.png" width="239" >
+</p>
 
 ## 🔮 Live Demo (Animation GIF) Coming soon
 
