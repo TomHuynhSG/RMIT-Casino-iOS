@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img width="200" src="https://i.imgur.com/QOv0msZ.png">
+  <img width="600" src="https://i.imgur.com/7sMlQgo.png">
 </p>
 
 <p align="center">"Money won is twice as sweet as money earned!"</p>
