@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct LogoView: View {
+    var logoFileName: String
+    
     var body: some View {
-        Image("rmit-casino-logo")
+        Image(logoFileName)
             .resizable()
             .scaledToFit()
             .frame(minHeight: 130, idealHeight: 170, maxHeight: 200, alignment: .center)
@@ -19,6 +21,6 @@ struct LogoView: View {
 
 struct LogoView_Previews: PreviewProvider {
     static var previews: some View {
-        LogoView()
+        LogoView(logoFileName: "rmit-casino-welcome-logo")
     }
 }

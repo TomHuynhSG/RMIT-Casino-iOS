@@ -14,7 +14,7 @@ struct InfoView: View {
       ZStack{
           Color("ColorBlueRMIT")
           VStack(alignment: .center, spacing: 10) {
-            LogoView()
+            LogoView(logoFileName: "rmit-casino-logo")
             
             Spacer()
             

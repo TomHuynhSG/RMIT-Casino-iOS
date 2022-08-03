@@ -121,7 +121,7 @@ struct ContentView: View {
             // MARK: - GAME UI
             VStack {
                 // MARK: - LOGO HEADER
-                LogoView()
+                LogoView(logoFileName: "rmit-casino-welcome-logo")
                 Spacer()
                 
                 // MARK: - SCORE
