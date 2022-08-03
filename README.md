@@ -17,7 +17,7 @@
   <img src="https://i.imgur.com/LpTyusp.png" width="239" >
 </p>
 
-Note: RMIT Casino got features like background music, sound effects and haptic feedback (vibration) so  the best experience, it is recommended to play on an actual physical iPhone!
+
 
 ## 🔮 Live Demo (Animation GIF)
 
@@ -28,12 +28,13 @@ Note: RMIT Casino got features like background music, sound effects and haptic f
      <td>Information Pop-up</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-hard-mode-gameover.gif?raw=true" width="280"></td>
-    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-easy-mode.gif?raw=true" width="280"></td>
-    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-info-view.gif?raw=true" width="280"></td>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-hard-mode-gameover.gif?raw=true" width="250"></td>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-easy-mode.gif?raw=true" width="250"></td>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-info-view.gif?raw=true" width="250"></td>
    </tr>
  </table>
  
+Note: RMIT Casino got features like background music, sound effects and haptic feedback (vibration) so  the best experience, it is recommended to play on an actual physical iPhone!
  
 ## 🔧 Build Information
 - Xcode 13.4.1
