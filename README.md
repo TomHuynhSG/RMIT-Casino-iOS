@@ -24,7 +24,7 @@
 <table>
   <tr>
     <td>Hard Mode + GameOver</td>
-     <td>Easy Mode + Winning + Reset Game</td>
+     <td>Easy Mode + Winning + Reset</td>
      <td>Information Pop-up</td>
   </tr>
   <tr>
