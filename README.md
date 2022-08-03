@@ -17,7 +17,7 @@
   <img src="https://i.imgur.com/LpTyusp.png" width="239" >
 </p>
 
-## 🔮 Live Demo (Animation GIF) Coming soon
+## 🔮 Live Demo (Animation GIF)
 
 <table>
   <tr>
@@ -31,6 +31,8 @@
     <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-info-view.gif?raw=true" width="280"></td>
    </tr>
  </table>
+ 
+ Note: RMIT Casino got features like background music, sound effects and haptic feedback (vibration) so  the best experience, it is  to play on an actual physical iPhone!
  
 ## 🔧 Build Information
 - Xcode 13.4.1
