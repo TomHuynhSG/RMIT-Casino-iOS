@@ -19,8 +19,19 @@
 
 ## 🔮 Live Demo (Animation GIF) Coming soon
 
-- To be updated!
-
+<table>
+  <tr>
+    <td>Hard Mode + GameOver</td>
+     <td>Easy Mode + Winning</td>
+     <td>Information Pop-up</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-hard-mode-gameover.gif?raw=true" width="280"></td>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-easy-mode.gif?raw=true" width="280"></td>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-info-view.gif?raw=true" width="280"></td>
+   </tr>
+ </table>
+ 
 ## 🔧 Build Information
 - Xcode 13.4.1
 - SwiftUI Framework
