@@ -17,6 +17,8 @@
   <img src="https://i.imgur.com/LpTyusp.png" width="239" >
 </p>
 
+Note: RMIT Casino got features like background music, sound effects and haptic feedback (vibration) so  the best experience, it is recommended to play on an actual physical iPhone!
+
 ## 🔮 Live Demo (Animation GIF)
 
 <table>
@@ -32,7 +34,6 @@
    </tr>
  </table>
  
-Note: RMIT Casino got features like background music, sound effects and haptic feedback (vibration) so  the best experience, it is recommended to play on an actual physical iPhone!
  
 ## 🔧 Build Information
 - Xcode 13.4.1
