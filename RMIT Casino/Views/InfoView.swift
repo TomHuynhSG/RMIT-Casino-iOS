@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct InfoView: View {
-  @Environment(\.presentationMode) var presentationMode
+  @Environment(\.dismiss) var dismiss
   
   var body: some View {
       ZStack{
@@ -54,7 +54,7 @@ struct InfoView: View {
           .overlay(
             Button(action: {
               audioPlayer?.stop()
-              self.presentationMode.wrappedValue.dismiss()
+              dismiss()
             }) {
               Image(systemName: "xmark.circle")
                 .font(.title)
