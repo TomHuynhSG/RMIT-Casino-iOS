@@ -11,13 +11,31 @@
 
 - This is an iOS application, inspired from the Melbourne Crown Casino!
 - It is an easy to play iOS game version of Slot Machine 🎰!
+<p align="center">
+  <img src="https://i.imgur.com/vaJypZ3.png" width="238" >
+  <img src="https://i.imgur.com/gUmS8n5.png" width="238" >
+  <img src="https://i.imgur.com/LpTyusp.png" width="239" >
+</p>
 
-<img src="https://i.imgur.com/Z2EwulP.png" width="238" > <img src="https://i.imgur.com/gUmS8n5.png" width="238" > <img src="https://i.imgur.com/LpTyusp.png" width="239" >
 
-## 🔮 Live Demo (Animation GIF) Coming soon
 
-- To be updated!
+## 🔮 Live Demo (Animation GIF)
 
+<table>
+  <tr>
+    <td>Hard Mode + GameOver</td>
+     <td>Easy Mode + Winning + Reset</td>
+     <td>Information Pop-up</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-hard-mode-gameover.gif?raw=true" width="245"></td>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-easy-mode.gif?raw=true" width="245"></td>
+    <td><img src="https://github.com/TomHuynhSG/RMIT-Casino/blob/main/sceenshots/rmit-casino-gif-info-view.gif?raw=true" width="245"></td>
+   </tr>
+ </table>
+ 
+Note: RMIT Casino got features like background music, sound effects and haptic feedback (vibration) so for the best experience, it is recommended to play on an actual physical iPhone!
+ 
 ## 🔧 Build Information
 - Xcode 13.4.1
 - SwiftUI Framework
