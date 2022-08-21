@@ -42,4 +42,4 @@ Note: RMIT Casino got features like background music, sound effects and haptic f
 - Target Deployment iOS >=15.5
 
 ## 🏆 Author
-- Huynh Nguyen Minh Thong - tomhuynhsg@gmail.com
+- Huynh Nguyen Minh Thong (Tom Huynh) - tomhuynhsg@gmail.com
